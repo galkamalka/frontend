@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   static const mainColor = Color.fromRGBO(46, 164, 171, 1);
+
+  final _itemList = ['인기순', '가격순'];
+  var _selectedItemIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +39,14 @@ class MyApp extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(children: [
-                  SizedBox(width: 18,),
-                  Text('매점 혼잡도', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
-                ],),
+                Row(
+                  children: const [
+                    SizedBox(width: 18,),
+                    Text('매점 혼잡도', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
+                  ],
+                ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(16, 12, 16, 0),
+                  margin: EdgeInsets.fromLTRB(16, 12, 16, 20),
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -51,10 +56,123 @@ class MyApp extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Text('지금 매점은 혼잡 상태입니다.', style: TextStyle(fontSize: 16),)
+                      Text('지금 매점은 혼잡 상태입니다.', style: TextStyle(fontSize: 16),),
+                      SizedBox(height: 10,),
+                      LinearProgressIndicator(value: 0.2, minHeight: 20, borderRadius: BorderRadius.all(Radius.circular(10)), color: mainColor, backgroundColor: Colors.grey,)
                     ],
                   )
-                )
+                ),
+                Row(
+                  children: [
+                    SizedBox(width: 18,),
+                    Text('상품 순위', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
+                    SizedBox(width: 6,),
+                    SizedBox(
+                      height: 25,
+                      child: DropdownButton(
+                        underline: SizedBox.shrink(),
+                        value: _itemList[_selectedItemIndex],
+                        items: _itemList.map(
+                          (value) { 
+                            return DropdownMenuItem (
+                              value: value,
+                              child: Text(value, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: mainColor))
+                            );
+                          },
+                        ).toList(),
+                        onChanged: (value) {
+                          // setState(() {
+                          //   _selectedItemIndex = _itemList.indexOf(value);
+                          // });
+                        },
+                        iconDisabledColor: mainColor,
+                        iconEnabledColor: mainColor,
+                      )
+                    )
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(16, 12, 16, 20),
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromRGBO(236, 236, 236, 1)
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('01', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
+                          SizedBox(width: 16,),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child: const Image(
+                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+                              height: 55,
+                            ),
+                          ),
+                          SizedBox(width: 24,),
+                          Text('따옴바 딸기맛', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                        ],
+                      ),
+                      SizedBox(height: 14,),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('02', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
+                          SizedBox(width: 16,),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child: const Image(
+                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+                              height: 55,
+                            ),
+                          ),
+                          SizedBox(width: 24,),
+                          Text('붕어싸만코', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                        ],
+                      ),
+                      SizedBox(height: 14,),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('03', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
+                          SizedBox(width: 16,),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child: const Image(
+                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+                              height: 55,
+                            ),
+                          ),
+                          SizedBox(width: 24,),
+                          Text('뻥튀기', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                        ],
+                      ),
+                    ],
+                  )
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Row(
+                      children: [
+                        SizedBox(width: 18,),
+                        Text('신제품 건의', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.add_circle_outline_outlined, size: 24, color: mainColor,),
+                        SizedBox(width: 36,),
+                      ],
+                    )
+                  ],
+                ),
               ],
             )
           ]
@@ -70,10 +188,31 @@ class MyApp extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.home_rounded, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('홈', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('검색', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.menu, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('전체', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+              children: [
+                InkWell(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.home_rounded, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('홈', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                  onTap: () {
+
+                  },
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('검색', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                  onTap: () {
+
+                  },
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.menu, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('전체', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                  onTap: () {
+
+                  }
+                )
               ],
             )
           )
