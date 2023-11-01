@@ -9,170 +9,193 @@ import './search.dart';
 class Home extends StatelessWidget {
   Home({ Key? key }) : super(key: key);
 
-  var _itemList = ['인기순', '가격순'];
   var _selectedItemIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(120),
-          child: Container(
-            padding: EdgeInsets.fromLTRB(36, 64, 36, 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(children: [
-                  Text('매점', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: ThemePallete.mainColor)),
-                  SizedBox(width: 21,),
-                  Container(width: 2, height: 22, decoration: BoxDecoration(color: Color.fromRGBO(217, 217, 217, 1))),
-                  SizedBox(width: 21,),
-                  Text('My', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Color.fromRGBO(178, 175, 175, 1)))
-                ],),
-                Icon(Icons.circle, size: 30, color: ThemePallete.mainColor,)
-            ],)
-          ),
-        ),
+        // appBar: 
         body: Column(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: const [
-                    SizedBox(width: 18,),
-                    Text('매점 혼잡도', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
-                  ],
-                ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(16, 12, 16, 20),
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromRGBO(236, 236, 236, 1)
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('지금 매점은 혼잡 상태입니다.', style: TextStyle(fontSize: 16),),
-                      SizedBox(height: 10,),
-                      LinearProgressIndicator(value: 0.2, minHeight: 20, borderRadius: BorderRadius.all(Radius.circular(10)), color: ThemePallete.mainColor, backgroundColor: Colors.grey,)
-                    ],
-                  )
-                ),
-                Row(
-                  children: [
-                    SizedBox(width: 18,),
-                    Text('상품 순위', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
-                    SizedBox(width: 6,),
-                    SizedBox(
-                      height: 25,
-                      child: DropdownButton(
-                        underline: SizedBox.shrink(),
-                        value: _itemList[_selectedItemIndex],
-                        items: _itemList.map(
-                          (value) { 
-                            return DropdownMenuItem (
-                              value: value,
-                              child: Text(value, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: ThemePallete.mainColor))
-                            );
-                          },
-                        ).toList(),
-                        onChanged: (value) {
-                          // setState(() {
-                          //   _selectedItemIndex = _itemList.indexOf(value);
-                          // });
-                        },
-                        iconDisabledColor: ThemePallete.mainColor,
-                        iconEnabledColor: ThemePallete.mainColor,
-                      )
-                    )
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(16, 12, 16, 20),
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromRGBO(236, 236, 236, 1)
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('01', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
-                          SizedBox(width: 16,),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12.0),
-                            child: const Image(
-                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-                              height: 55,
-                            ),
-                          ),
-                          SizedBox(width: 24,),
-                          Text('따옴바 딸기맛', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                        ],
+                  decoration: BoxDecoration(color: ThemePallete.mainColor),
+                  child: Column(children: [
+                    PreferredSize(
+                    preferredSize: Size.fromHeight(120),
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(25, 50, 25, 15),
+                      decoration: BoxDecoration(
+                        color: ThemePallete.mainColor,
                       ),
-                      SizedBox(height: 14,),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('02', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
-                          SizedBox(width: 16,),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12.0),
-                            child: const Image(
-                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-                              height: 55,
-                            ),
-                          ),
-                          SizedBox(width: 24,),
-                          Text('붕어싸만코', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                        ],
-                      ),
-                      SizedBox(height: 14,),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('03', style: TextStyle(color: Color.fromRGBO(178, 175, 175, 1), fontSize: 16, fontWeight: FontWeight.w700),),
-                          SizedBox(width: 16,),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12.0),
-                            child: const Image(
-                              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-                              height: 55,
-                            ),
-                          ),
-                          SizedBox(width: 24,),
-                          Text('뻥튀기', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                        ],
-                      ),
-                    ],
-                  )
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Row(
-                      children: [
-                        SizedBox(width: 18,),
-                        Text('신제품 건의', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black)),
-                      ],
+                          RichText(
+                            text: const TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '구상은',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                    ),
+                                ),
+                                TextSpan(
+                                  text: '님\n안녕하세요!',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                    ),
+                                ),
+                            ],
+                          ), ),
+                          Icon(Icons.circle, size: 50, color: Colors.white,)
+                      ],)
                     ),
-                    Row(
-                      children: [
-                        Icon(Icons.add_circle_outline_outlined, size: 24, color: ThemePallete.mainColor,),
-                        SizedBox(width: 36,),
-                      ],
-                    )
-                  ],
+                  ),
+                  Container(
+                    height: 40,
+                    margin: EdgeInsets.fromLTRB(25, 0, 25, 20),
+                    child: TextField(
+                      style: TextStyle(fontSize: 16),
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(22),
+                          borderSide: BorderSide.none
+                        ),
+                        hintText: '고등학교 찾아보기',
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                      ),
+                    ),
+                  ),
+                  ]),
                 ),
+                
+                Container(
+                  decoration: BoxDecoration(
+                    color: ThemePallete.mainColor
+                  ),
+                  child: Container(
+                    height: 530,
+                    width: double.infinity,
+                    padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(55), topRight: Radius.circular(55)),
+                      color: Colors.white
+                    ),
+                    child: SingleChildScrollView(physics: BouncingScrollPhysics(),child: Column(children: [
+                      Wrap(
+                        alignment: WrapAlignment.start,
+                        direction: Axis.horizontal,
+                        spacing: 10.0, // gap between adjacent chips
+                        runSpacing: 10.0, // gap between lines
+                        children: [
+                          MaterialButton(
+                            onPressed: () {},
+                            color: ThemePallete.subColor,
+                            child: Text('디미고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(22.0),
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: () {},
+                            color: ThemePallete.subColor,
+                            child: Text('한민고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(22.0),
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: () {},
+                            color: ThemePallete.subColor,
+                            child: Text('단원고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(22.0),
+                            ),
+                          ),
+                        ]
+                      ,),
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+                    ],
+                  )
+                ),
+                )
+                )
               ],
             )
           ]
@@ -183,36 +206,65 @@ class Home extends StatelessWidget {
             topRight: Radius.circular(24.0),
           ),
           child: BottomAppBar(
+            color: Colors.white,
             height: 60,
-            padding: EdgeInsets.fromLTRB(36, 0, 36, 0),
+            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                InkWell(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.home_rounded, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('홈', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                  onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
+                Expanded(child: 
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('질문게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
 
-                  },
+                    },
+                  ),
                 ),
-                InkWell(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('검색', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                  onTap: () {
-                    
-                  },
-                ),
-                InkWell(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  child: SizedBox(height: 48, width: 48, child: Column(children: [Icon(Icons.menu, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('전체', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                  onTap: () {
+                Expanded(child: 
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('자유게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
 
-                  }
+                    },
+                  ),
+                ),
+                Expanded(child: 
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.home_rounded, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('홈', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
+
+                    },
+                  ),
+                ),
+                Expanded(child: 
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_bubble_outline, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('채팅', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    onTap: () {
+                      
+                    },
+                  ),
+                ),
+                Expanded(child: 
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.settings_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('설정', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    onTap: () {
+
+                    }
+                  ),
                 )
               ],
             )
