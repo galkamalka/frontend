@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
-class Search extends StatefulWidget {
+class Mypage extends StatefulWidget {
   @override
-  _SearchState createState() => _SearchState();
+  _MypageState createState() => _MypageState();
 }
 
-class _SearchState extends State<Search> {
+class _MypageState extends State<Mypage> {
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _SearchState extends State<Search> {
                             text: const TextSpan(
                               children: [
                                 TextSpan(
-                                  text: '구상은',
+                                  text: '마이페이지',
                                   style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w800,
@@ -59,23 +59,6 @@ class _SearchState extends State<Search> {
                       ],)
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    margin: EdgeInsets.fromLTRB(25, 0, 25, 20),
-                    child: TextField(
-                      style: TextStyle(fontSize: 16),
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide.none
-                        ),
-                        hintText: '고등학교 찾아보기',
-                        filled: true,
-                        fillColor: Colors.white,
-                        contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                      ),
-                    ),
-                  ),
                   ]),
                 ),
                 
@@ -91,42 +74,6 @@ class _SearchState extends State<Search> {
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(55), topRight: Radius.circular(55)),
                       color: Colors.white
                     ),
-                    child: SingleChildScrollView(physics: BouncingScrollPhysics(),child: Column(children: [
-                      Wrap(
-                        alignment: WrapAlignment.start,
-                        direction: Axis.horizontal,
-                        spacing: 10.0, // gap between adjacent chips
-                        runSpacing: 10.0, // gap between lines
-                        children: [
-                          MaterialButton(
-                            onPressed: () {},
-                            color: ThemePallete.subColor,
-                            child: Text('디미고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22.0),
-                            ),
-                          ),
-                          MaterialButton(
-                            onPressed: () {},
-                            color: ThemePallete.subColor,
-                            child: Text('한민고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22.0),
-                            ),
-                          ),
-                          MaterialButton(
-                            onPressed: () {},
-                            color: ThemePallete.subColor,
-                            child: Text('단원고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22.0),
-                            ),
-                          ),
-                        ]
-                      ,),
-                    ]
-                    )
-                    )
                   )
                 )
               ]

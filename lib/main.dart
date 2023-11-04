@@ -5,6 +5,8 @@ import './theme.dart';
 
 import './pages/home.dart';
 import './pages/search.dart';
+import './pages/mypage.dart';
+import './pages/chat.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,11 +15,17 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  final _itemList = ['인기순', '가격순'];
-  var _selectedItemIndex = 0;
-
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Home(),
+      routes: <String, WidgetBuilder>{
+        '/home': (BuildContext context) => Home(),
+        '/search': (BuildContext context) => Search(),
+        '/mypage': (BuildContext context) => Mypage(),
+        '/chat': (BuildContext context) => Chat(),
+      },
+    );
   }
 }

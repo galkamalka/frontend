@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:developer';
 
 import '../theme.dart';
+import 'package:app/widgets/appBar.dart';
 
 import './search.dart';
 
@@ -56,7 +57,14 @@ class Home extends StatelessWidget {
                                 ),
                             ],
                           ), ),
-                          Icon(Icons.circle, size: 50, color: Colors.white,)
+                          IconButton(
+                            iconSize: 50,
+                            icon: const Icon(Icons.circle),
+                            color: Colors.white,
+                            onPressed: () {
+                              Navigator.pushNamedAndRemoveUntil(context, '/mypage', (_) => false);
+                            },
+                          ),
                       ],)
                     ),
                   ),
@@ -85,6 +93,7 @@ class Home extends StatelessWidget {
                     color: ThemePallete.mainColor
                   ),
                   child: Container(
+                    // height: double.infinity,
                     height: 530,
                     width: double.infinity,
                     padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
@@ -205,70 +214,7 @@ class Home extends StatelessWidget {
             topLeft: Radius.circular(24.0),
             topRight: Radius.circular(24.0),
           ),
-          child: BottomAppBar(
-            color: Colors.white,
-            height: 60,
-            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('질문게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
-
-                    },
-                  ),
-                ),
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('자유게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
-
-                    },
-                  ),
-                ),
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.home_rounded, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('홈', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
-
-                    },
-                  ),
-                ),
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_bubble_outline, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('채팅', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-                      
-                    },
-                  ),
-                ),
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.settings_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('설정', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-
-                    }
-                  ),
-                )
-              ],
-            )
-          )
+          child: CustomAppBar(),
         )
       )
     );
