@@ -7,6 +7,7 @@ import './pages/home.dart';
 import './pages/search.dart';
 import './pages/mypage.dart';
 import './pages/chat.dart';
+import './pages/board.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
         '/search': (BuildContext context) => Search(),
         '/mypage': (BuildContext context) => Mypage(),
         '/chat': (BuildContext context) => Chat(),
+        '/board': (BuildContext context) => Board(),
+
       },
     );
   }
