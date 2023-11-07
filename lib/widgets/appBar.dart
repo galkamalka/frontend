@@ -1,9 +1,7 @@
 import 'package:app/pages/chat.dart';
 import 'package:app/pages/home.dart';
-import 'package:app/pages/search.dart';
-import 'package:flutter/material.dart';
 import 'package:app/pages/board.dart';
-
+import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
   CustomAppBar({super.key});
@@ -18,30 +16,15 @@ class CustomAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(width: 20,),
                 Expanded(child: 
                   InkWell(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.search, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('질문게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
+                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
                     onTap: () {
                       // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
                       Navigator.pushReplacement(
-                        context,
-                        new MaterialPageRoute(
-                          builder: (context) => new Search(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Expanded(child: 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    child: SizedBox(height: 48, child: Column(children: [Icon(Icons.chat_outlined, color: Color.fromRGBO(173, 173, 173, 1), size: 24.0), Text('자유게시판', style: TextStyle(color: Color.fromRGBO(173, 173, 173, 1), fontSize: 12.0),)])),
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Search()));
-                       Navigator.pushReplacement(
                         context,
                         new MaterialPageRoute(
                           builder: (context) => new Board(),
@@ -90,7 +73,8 @@ class CustomAppBar extends StatelessWidget {
 
                     }
                   ),
-                )
+                ),
+                SizedBox(width: 20,),
               ],
             )
           );

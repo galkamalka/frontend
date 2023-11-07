@@ -80,7 +80,7 @@ class _ChatState extends State<Chat> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(children: [
-                            Text('디미오리', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),),
+                            Text('디미레오', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),),
                             SizedBox(width: 20,),
                             RoundedBackgroundText(
                               '디미고',
@@ -93,7 +93,100 @@ class _ChatState extends State<Chat> {
                           ]),
                           // Text('19:08'),
                       ],),
-                      Text('네넹! 궁금한 점은 편안하게..', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[500]),),
+                      Text('근데 생각보다 나쁘지 않아..', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[500]),),
+                    ], ),
+                  ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                  child: Row(children: [
+                    Icon(Icons.circle, size: 65, color: Colors.grey[300]),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(children: [
+                            Text('단원당근', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),),
+                            SizedBox(width: 20,),
+                            RoundedBackgroundText(
+                              '단원고',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800,),
+                              backgroundColor: Colors.amber[700],
+                            ),
+                          ]),
+                          // Text('19:08'),
+                      ],),
+                      Text('네네 맞아요.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[500]),),
+                    ], ),
+                  ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                  child: Row(children: [
+                    Icon(Icons.circle, size: 65, color: Colors.grey[300]),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(children: [
+                            Text('디미치즈', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),),
+                            SizedBox(width: 20,),
+                            RoundedBackgroundText(
+                              '디미고',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800,),
+                              backgroundColor: Color.fromRGBO(255, 198, 47, 1),
+                            ),
+                          ]),
+                          // Text('19:08'),
+                      ],),
+                      Text('아니요. 면접은 특전일전 모두..', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[500]),),
+                    ], ),
+                  ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                  child: Row(children: [
+                    Icon(Icons.circle, size: 65, color: Colors.grey[300]),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(children: [
+                            Text('한민구리', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),),
+                            SizedBox(width: 20,),
+                            RoundedBackgroundText(
+                              '한민고',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800,),
+                              backgroundColor: Colors.green[400],
+                            ),
+                          ]),
+                          // Text('19:08'),
+                      ],),
+                      Text('오 그래요??', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[500]),),
                     ], ),
                   ],
                   ),

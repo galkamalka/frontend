@@ -1,3 +1,4 @@
+import 'package:app/pages/mypage.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer';
 
@@ -62,7 +63,12 @@ class Home extends StatelessWidget {
                             icon: const Icon(Icons.circle),
                             color: Colors.white,
                             onPressed: () {
-                              Navigator.pushNamedAndRemoveUntil(context, '/mypage', (_) => false);
+                              Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                  builder: (context) => new Mypage(),
+                                ),
+                              );
                             },
                           ),
                       ],)
@@ -94,7 +100,7 @@ class Home extends StatelessWidget {
                   ),
                   child: Container(
                     // height: double.infinity,
-                    height: 530,
+                    height: 630,
                     width: double.infinity,
                     padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                     decoration: BoxDecoration(
@@ -118,16 +124,16 @@ class Home extends StatelessWidget {
                           ),
                           MaterialButton(
                             onPressed: () {},
-                            color: ThemePallete.subColor,
-                            child: Text('한민고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
+                            color: Color.fromRGBO(255, 246, 221, 1),
+                            child: Text('한민고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Color.fromRGBO(167, 164, 181, 1)),),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(22.0),
                             ),
                           ),
                           MaterialButton(
                             onPressed: () {},
-                            color: ThemePallete.subColor,
-                            child: Text('단원고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
+                            color: Color.fromRGBO(255, 246, 221, 1),
+                            child: Text('단원고', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15, color: Color.fromRGBO(167, 164, 181, 1)),),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(22.0),
                             ),
@@ -200,6 +206,74 @@ class Home extends StatelessWidget {
                           ]
                         ),
                       ),
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          border: Border.all(
+                            color: ThemePallete.subColor,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
+                            SizedBox(height: 15,),
+                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            SizedBox(height: 15,),
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                          ]
+                        ),
+                      ),
+                      // Expanded(flex: 1, child: Container())
                     ],
                   )
                 ),
