@@ -100,7 +100,7 @@ class Home extends StatelessWidget {
                   ),
                   child: Container(
                     // height: double.infinity,
-                    height: 630,
+                    height: 590,
                     width: double.infinity,
                     padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                     decoration: BoxDecoration(
@@ -178,9 +178,9 @@ class Home extends StatelessWidget {
                           children: [
                             Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
                             SizedBox(height: 15,),
-                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            Text('[제 23기 신입생 모집 요강]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
                             SizedBox(height: 15,),
-                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n신입생 입학 요강이 새로 제작되었습니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
                           ]
                         ),
                       ),
@@ -200,9 +200,9 @@ class Home extends StatelessWidget {
                           children: [
                             Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
                             SizedBox(height: 15,),
-                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            Text('[제 22회 일반전형 최종 입학 결과 발표]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
                             SizedBox(height: 15,),
-                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n일반전형 최종 결과가 발표되었습니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
                           ]
                         ),
                       ),
@@ -222,9 +222,9 @@ class Home extends StatelessWidget {
                           children: [
                             Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
                             SizedBox(height: 15,),
-                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            Text('[제 22회 일반전형 1차 합격 결과 발표]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
                             SizedBox(height: 15,),
-                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n일반전형 1차 합격 (서류) 결과가 발표되었습니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
                           ]
                         ),
                       ),
@@ -245,7 +245,7 @@ class Home extends StatelessWidget {
                           children: [
                             Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
                             SizedBox(height: 15,),
-                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            Text('[제 23회 특별전형 최종 결과 발표]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
                             SizedBox(height: 15,),
                             Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
                           ]
@@ -267,9 +267,9 @@ class Home extends StatelessWidget {
                           children: [
                             Row(children: [Icon(Icons.circle, size: 30, color: Colors.pink,), SizedBox(width: 10), Text('한국디지털미디어고등학교', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray))]),
                             SizedBox(height: 15,),
-                            Text('[제 23회 특별전형 신입생 모집 안내]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                            Text('[제 23회 특별전형 1차 합격 결과 발표]', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
                             SizedBox(height: 15,),
-                            Text('학부모 및 신입생 여러분 안녕하세요.\n우선, 디미고에 많은 관심을 가져주셔서 감사합니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
+                            Text('학부모 및 신입생 여러분 안녕하세요.\n특별전형 1차 합격 (서류) 결과가 발표되었습니다.', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: ThemePallete.gray))
                           ]
                         ),
                       ),

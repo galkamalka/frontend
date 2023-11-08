@@ -51,7 +51,7 @@ class Board extends StatelessWidget {
                     color: ThemePallete.mainColor
                   ),
                   child: Container(
-                    height: 600,
+                    height: 670,
                     width: double.infinity,
                     padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                     decoration: BoxDecoration(
@@ -147,7 +147,313 @@ class Board extends StatelessWidget {
       ),
     ],
   ),
-)           
+),
+Container(
+  padding: EdgeInsets.all(16),
+  width: double.infinity,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(22),
+    border: Border.all(
+      color: Color.fromARGB(255, 239, 248, 245),
+      width: 4,
+    ),
+  ),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+        children: [
+          Text(
+            '실시간 질문게시판',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w900,
+              color: Color.fromARGB(255, 248,158,23),
+            ),
+          ),
+          Icon(
+            Icons.arrow_forward_ios, 
+            size: 20,
+            color: Color.fromARGB(255, 248,158,23), 
+          ),
+        ],
+      ),
+      SizedBox(height: 10),
+      // 여기에 새로운 Column을 추가합니다.
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Icon(Icons.circle, size: 50, color: Colors.pink), 
+    SizedBox(width: 10),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                '디미거위',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+              ),
+              SizedBox(width: 5),
+              Text(
+                '3분',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+              Expanded(child: Container(), flex: 1),
+              Text(
+                '11/05',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+            ],
+          ),
+          Text(
+            '디미고',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+
+            ],
+      ),
+            Wrap(
+        alignment: WrapAlignment.start,
+        direction: Axis.horizontal,
+        spacing: 10, 
+        runSpacing: 0.00001, 
+        children: <Widget>[
+          ListTile(
+            title: Text('디미고 우정학사 어때요?',
+            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+            ), trailing: Row(
+        mainAxisSize: MainAxisSize.min, 
+        children: <Widget>[
+          IconButton(
+            icon: Icon(Icons.thumb_up),
+            onPressed: () {
+             
+            },
+            color: Colors.grey,
+            iconSize: 17.0,
+            padding: EdgeInsets.zero, 
+            constraints: BoxConstraints(),
+          ),
+          Text(' 4 '),
+          IconButton(
+            icon: Icon(Icons.thumb_down),
+            onPressed: () {
+             
+            },
+            color: Colors.grey,
+            iconSize: 17.0,
+            padding: EdgeInsets.zero,
+            constraints: BoxConstraints(),
+          ),
+          Text(' 2 '),
+          IconButton(
+            icon: Icon(Icons.comment),
+            onPressed: () {
+            
+            },
+            color: Colors.grey,
+            iconSize: 17.0,
+            padding: EdgeInsets.zero,
+            constraints: BoxConstraints(),
+          ),
+          Text(' 6 '),
+        ],
+      ),
+            onTap: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FreeBoardPage()),
+            );
+            },
+          ),
+
+          Padding(
+  padding: EdgeInsets.only(bottom: 9.0),
+  child: Divider(
+    height: 0.001,
+    thickness: 1.0,
+    indent: 16.0,
+    endIndent: 20.0,
+  ),
+),
+
+          
+       Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Icon(Icons.subdirectory_arrow_right, size:20,color:Colors.grey),
+    InkWell(child: Icon(Icons.circle, size: 40, color: Color.fromARGB(255, 1,153,91)), onTap: () => {
+      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => UserImage()),
+            )
+    },),
+    SizedBox(width: 10),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                '디미오리',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+              ),
+              SizedBox(width: 5),
+              Text(
+                '3분',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+              Expanded(child: Container(), flex: 1),
+              Text(
+                '11/05',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+            ],
+          ),
+          Text(
+            '디미고',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+          ),Text(
+          '우정학사 좋아요!! 방 친구들이랑 즐거운 추억도 쌓을 수 있고 :)',
+          style: TextStyle(color: Colors.black,fontSize: 15), ),
+          
+          SizedBox(height: 10),
+        ],
+        
+      ),
+    ),
+  ],
+),
+         
+          Padding(
+  padding: EdgeInsets.only(bottom: 9.0), 
+  child: Divider(
+    height: 0.1,
+    thickness: 1.0,
+    indent: 20.0,
+    endIndent: 20.0,
+  ),
+),
+
+           Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Icon(Icons.subdirectory_arrow_right, size:20,color:Colors.grey),
+    InkWell(child: Icon(Icons.circle, size: 40, color: Color.fromARGB(255, 1,153,91)), onTap: () => {
+      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => UserImage()),
+            )
+    },),
+    SizedBox(width: 10),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                '디미오리',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+              ),
+              SizedBox(width: 5,),
+              Text(
+                '3분',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+              Expanded(child: Container(), flex: 1),
+              Text(
+                '11/05',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+            ],
+          ),
+          Text(
+            '디미고',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+          ),Text(
+          '우정학사 좋아요!! 방 친구들이랑 즐거운 추억도 쌓을 수 있고 :)',
+          style: TextStyle(color: Colors.black,fontSize: 15), ),
+          SizedBox(height: 10),
+        ],
+        
+      ),
+    ),
+  ],
+),
+
+   
+          Padding(
+  padding: EdgeInsets.only(bottom: 7.0),
+  child: Divider(
+    height: 0.001,
+    thickness: 1.0,
+    indent: 16.0,
+    endIndent: 20.0,
+  ),
+),
+
+
+
+  Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Icon(Icons.subdirectory_arrow_right, size:20,color:Colors.grey),
+    Icon(Icons.circle, size: 40, color: Color.fromARGB(255, 1,153,91)), 
+    SizedBox(width: 10),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                '디미오리',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+              ),
+              SizedBox(width: 5),
+              Text(
+                '3분',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+              Expanded(child: Container(), flex: 1),
+              Text(
+                '11/05',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+              ),
+            ],
+          ),
+          Text(
+            '디미고',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: ThemePallete.gray),
+          ),
+          
+          SizedBox(height: 10),
+        ],
+        
+      ),
+    ),
+  ],
+),
+        ],
+      ),
+    ],
+  ),
+)
+
+
                         ],
                       ),
                       
@@ -185,6 +491,13 @@ class FreeBoardPage extends StatelessWidget {
         child: Text('자유게시판 내용'),
       ),
     );
+  }
+}
+
+class UserImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset('assets/profile.png');
   }
 }
 
